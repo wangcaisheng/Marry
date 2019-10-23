@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.billy.cc.core.component.CC;
 import com.csyj.marry.R;
 
 public class HomeFragment extends Fragment {
@@ -28,6 +29,17 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
+            }
+        });
+
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String callId = CC.obtainBuilder("ComponentA")
+                        .setActionName("showActivity")
+                        .build()
+                        .callAsync();
             }
         });
         return root;

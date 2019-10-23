@@ -7,8 +7,6 @@ import com.billy.cc.core.component.IComponent
 
 class ComponentA : IComponent{
     override fun onCall(cc: CC?): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-
         val actionName:String=cc!!.actionName
         when (actionName){
             "showActivity" ->{
@@ -42,7 +40,6 @@ class ComponentA : IComponent{
     }
 
     override fun getName(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         return "ComponentA"
     }
 
