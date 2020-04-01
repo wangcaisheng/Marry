@@ -1,3 +1,7 @@
+package com.scyj.study.util;
+
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -8,4 +12,11 @@ import static org.junit.Assert.*;
  */
 public class ReflectClassTest {
 
+    /**
+     * 测试反射私有方法
+     */
+    @Test
+    public void reflectPrivateMethod() {
+        ReflectClass.reflectPrivateMethod();
+    }
 }
