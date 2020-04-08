@@ -3,17 +3,19 @@
 apply from: rootProject.file('cc-settings-2.gradle')
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+
+def version=rootProject.ext.app_android
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion version.compileSdkVersion
+    buildToolsVersion version.buildToolsVersion
 
 
     defaultConfig {
         if (project.ext.runAsApp) {
             applicationId "com.csyj.kotlinmap"
         }
-        minSdkVersion 19
-        targetSdkVersion 29
+        minSdkVersion version.minSdkVersion
+        targetSdkVersion version.targetSdkVersion
         versionCode 1
         versionName "1.0"
 

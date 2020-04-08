@@ -1,4 +1,20 @@
 
+//ext 自定义增加内容
 ext{
+
+    //用key value的形式
+    app_android=[
+            compileSdkVersion:29,
+            buildToolsVersion: "29.0.3",
+            minSdkVersion: 15,
+            targetSdkVersion :29
+    ]
+
+    //依赖相关的
+
+    url=[
+            "debug": "debug url",
+            "release":"release url"
+    ]
 
 }

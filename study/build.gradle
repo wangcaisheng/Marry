@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
 
+
+def version=rootProject.ext.app_android
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion version.compileSdkVersion
+    buildToolsVersion version.buildToolsVersion
 
 
     defaultConfig {
         applicationId "com.scyj.study"
-        minSdkVersion 15
-        targetSdkVersion 29
+        minSdkVersion version.minSdkVersion
+        targetSdkVersion version.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -19,7 +21,14 @@ android {
     }
 
     buildTypes {
+      //根据编译类型设置URL,在Java中用 BuildConfig.SERVER_URL引用
+        debug{
+            buildConfigField("String","SERVER_URL","\" ${url.debug}\"")
+
+        }
         release {
+            buildConfigField("String","SERVER_URL","\" ${url.debug}\"")
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -35,4 +44,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 }
