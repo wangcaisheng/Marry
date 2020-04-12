@@ -1,5 +1,7 @@
 package com.scyj.study;
 
+import com.scyj.study.chain.ChainTest;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,4 +16,11 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void chainTest_method(){
+        ChainTest chainTest=new ChainTest();
+        chainTest.test();
+    }
+
 }

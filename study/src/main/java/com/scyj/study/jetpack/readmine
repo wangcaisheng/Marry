@@ -1,0 +1,31 @@
+jetpack:就是一套框架库，帮助开发者轻松编写优质应用的。
+1,Lifecycle:帮助其他组件或类感知Activity Fragment的生命周期。
+用法：Activity中 getLifecycle().addObserver(presenter);//添加观察者
+  定义观察者presenter：   implements LifecycleObserver//实现接口，并通过注解标明
+  方法在生命周期什么阶段回调
+         @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)//感知Activity的onCreate
+            void onCreateX(LifecycleOwner owner) {
+
+            }
+原理：Activity中添加了Fragment,通过Fragment生命周期变化跟观察者绑定。
+
+2，LivaData :
+  //用ViewModel包装了LiveData
+  NameViewModel model=new ViewModelProvider(this).get(NameViewModel.class);
+  //获取LiveData 并设置数据
+  model.getCurrentName().setValue(anotherName);
+  //观察者订阅LiveData，当LiveData维护的数据变化时，observer感知。同时感知生命周期，并用担心内存泄漏问题
+   model.getCurrentName().observe(this,observer);
+   //观察者实现，观察数据
+     Observer observer=new Observer<String>(){
+                @Override
+                public void onChanged(String s) {
+                    nameTextView.setText(s);
+                }
+            };
+
+ 3，DataBinding
+ 原理：将原生的xml文件拆解：<data>标签内容 + 原来没有用DataBinding的xml文件
+
+ 4,Room数据库
+
