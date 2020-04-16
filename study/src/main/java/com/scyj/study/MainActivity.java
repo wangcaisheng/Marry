@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.lang.reflect.Proxy;
+import java.util.HashMap;
 import java.util.Queue;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences=getSharedPreferences("",0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.apply();
+
 
     }
 

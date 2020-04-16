@@ -1,6 +1,7 @@
 package com.csyj.marry;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        ImageView imageView=null;
+        Glide.with(this).load("").into(imageView);
 
 
 
